@@ -1,0 +1,53 @@
+
+#{extends 'main.html' /}
+#{set title:'Create Employee' /}
+
+#{ifErrors} 
+	<h1>Oops…</h1> 
+	#{errors} 
+		<li>${error}</li> 
+	#{/errors} 
+#{/ifErrors} 
+#{form @Employees.save() }
+	<table>
+		<tr>
+			<td>Name:</td>
+			<td><input type="text" name="employee.firstName" value="${flash['employee.firstName']}" /></td>
+		</tr>
+
+		<tr>
+			<td>lastName:</td>
+			<td><input type="text" name="employee.lastName" value="${flash['employee.lastName']}" /></td>
+		</tr>
+
+		<tr>
+			<td>email:</td>
+			<td><input type="text" name="employee.email" value="${flash['employee.email']}" /></td>
+		</tr>
+
+		<tr>
+			<td>Project:</td>
+			<td><input type="text" name="employee.project" value="${flash['employee.project']}" /></td>
+		</tr>
+
+		<tr>
+			<td>contactNo:</td>
+			<td><input type="text" name="employee.contactNo" value="${flash['employee.contactNo']}" /></td>
+		</tr>
+
+		<tr>
+			<td>joiningDate:</td>
+			<td><input type="text" id="joiningDate" name="employee.joiningDate" value="${flash['employee.joiningDate']}" /></td>
+		</tr>
+
+	</table>
+   <div>
+      <input type="submit" value="Save" /> 
+      <a href="@{Employees.index()}"><input type="button" value="Cancel" /> </a>
+   </div>
+#{/form} 
+ <script type="text/javascript">
+  $(function() {
+    $("#joiningDate").datepicker();
+  });
+  </script>

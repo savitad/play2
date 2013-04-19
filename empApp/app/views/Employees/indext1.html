@@ -1,0 +1,12 @@
+#{extends 'main.html' /}
+#{set title:'All Employees' /}
+#{if employees == null || employees.isEmpty() == true}
+No Employees...
+#{/if}
+<a href="@{Employees.create()}">Create New Employee</a> 
+
+#{list items:employees, as:'employee' } 
+<li>
+<a href="@{Employees.details(employee.id)}">${employee.firstName}</a> 
+</li>
+#{/list} 

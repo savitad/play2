@@ -1,0 +1,12 @@
+@(employees: List[Employee])
+
+@if(employees == null || employees.isEmpty() == true) {
+No Employees...
+} else {
+	@for(employee <- employees){
+		<li>
+			<a href="/employees/@employee.id">@employee.firstName</a> 
+		</li>
+	}
+}
+<a href="/employees/new">Create New Employee</a>

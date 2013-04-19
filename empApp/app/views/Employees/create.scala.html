@@ -1,0 +1,19 @@
+@(employee: Form[Employee])
+
+@helper.form(action = routes.Employees.save()) {
+    
+    @helper.inputText(employee("firstName"))
+    @helper.inputText(employee("lastName"))
+    @helper.inputText(employee("email"))
+    @helper.inputText(employee("project"))
+    @helper.inputText(employee("contactNo"))
+    @helper.inputText(employee("joiningDate"))
+    <input type="submit" value="Save" /> 
+    <a href="/employees"><input type="button" value="Cancel" /> </a>
+}
+
+ <script type="text/javascript">
+  $(function() {
+    $("#joiningDate").datepicker();
+  });
+  </script>

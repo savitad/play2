@@ -1,0 +1,25 @@
+@(employee: Employee)
+
+@flash.get("success")
+<h1>Employee Details</h1>
+<div>
+     Name: @employee.firstName
+  </div>
+<div>
+     lastName: @employee.lastName
+  </div>
+<div>
+     email: @employee.email
+  </div>
+<div>
+     Project: @employee.project
+  </div>
+<div>
+     contactNo: @employee.contactNo
+  </div>
+<div>
+     joiningDate: @employee.joiningDate
+</div>
+<div>
+   <a href="/employees"><input type="button" value="Back"/></a> 
+</div>
